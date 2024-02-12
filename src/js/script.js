@@ -29,7 +29,7 @@ const options = {
     links: {
       enable: true, // this enables links between particles
       opacity: 0.3,
-      distance: 200,
+      distance: 100,
     },
     move: {
       enable: true, // this makes particles move
