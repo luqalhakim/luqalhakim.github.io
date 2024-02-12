@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>luqalhakim</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body
+    onselectstart="return false"
+    onpaste="return false;"
+    onCopy="return false"
+    onCut="return false"
+    onDrag="return false"
+    onDrop="return false"
+  >
+    <!-- Navbar header-->
+    <header>
+      <nav class="z-2 position-fixed navbar navbar-expand-md shadow">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="https://www.instagram.com/luq.elha" target="_blank">
+            <img src="../assets/icon.png" alt="icon" id="brandIcon" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#navbarText"
+            aria-controls="offcanvasExample"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="1" id="navbarText">
+            <div class="offcanvas-header">
+              <a class="navbar-brand" href="https://www.instagram.com/luq.elha" target="_blank">
+                <img src="../assets/icon.png" alt="icon" />
+                <div class="text-brand fw-bold">
+                  LUQALHAKIM <br />
+                  <span class="opacity-50">luq.elha@gmail.com</span>
+                </div>
+              </a>
+              <button
+                type="button"
+                class="btn-close text-reset"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="menu" style="display: none">Menu</div>
+            <ul class="navbar-nav d-flex justify-content-center fw-semibold">
+              <li class="nav-item">
+                <a class="nav-link" href="#home"><i class="fa-solid fa-house"></i>Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about"><i class="fa-solid fa-user"></i>About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#portfolio"><i class="fa-solid fa-file"></i>Portfolio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#blog"><i class="fa-solid fa-book"></i>Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact"><i class="fa-regular fa-message"></i>Contact</a>
+              </li>
+              <hr style="display: none" />
+              <div class="menu" style="display: none">Sosial Media</div>
+              <div class="sosial-media d-flex flex-row" id="navbarText">
+                <a href="https://www.instagram.com/luq.elha" target="_blank"
+                  ><i class="fa-brands fa-instagram fa-xl"></i
+                ></a>
+                <a href="https://www.linkedin.com/in/muhammad-luqmanul-hakim-77047326a/" target="_blank"
+                  ><i class="fa-brands fa-linkedin fa-xl"></i
+                ></a>
+                <a href="https://github.com/luqalhakim" target="_blank"><i class="fa-brands fa-github fa-xl"></i></a>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!--;-->
+
+    <!-- Hero -->
+    <section class="container-fluid mx-5" id="home">
+      <div class="z-1 hero position-absolute top-50 start-50 translate-middle text-center">
+        <div class="h2 fw-semibold name position-absolute start-50 translate-middle hide-name"></div>
+        <div class="h5 mb-3 fw-medium slide-up">Student | Programmer | Writer</div>
+        <div class="description opacity-50 slide-up">
+          Since high school I have been interested in programming, especially for website development, by studying
+          through sources on the internet and I have a habit of writing material to help my learning in website
+          development.
+        </div>
+      </div>
+      <!-- Scroll down button -->
+      <div class="z-1 position-absolute bottom-0 start-50 translate-middle-x mb-5">
+        <a href="#about">
+          <div class="box">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </a>
+      </div>
+      <!-- ; -->
+    </section>
+    <!-- ; -->
+
+    <!-- main content -->
+    <main class="wrapper pt-5" style="display: none">
+      <div class="z-1 container-fluid position-absolute top-100 bg-white" id="about">
+        <span class="text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, est. Ratione illum sit error. Eos veritatis
+          accusamus adipisci! Eveniet itaque repellat, alias maxime, at velit excepturi officiis commodi molestias
+          pariatur cumque soluta quas sequi esse vel! Sapiente ut sed reiciendis doloribus eum. Natus veritatis dolore
+          vel maiores quibusdam facere expedita, molestiae consectetur aspernatur non. Voluptas magnam illo eum nam
+          consectetur quasi dolores porro natus, autem consequatur odit reprehenderit, quibusdam unde impedit vero. Est
+          error, debitis adipisci quae quia inventore iure voluptatibus quam dolor deleniti fugiat consectetur vitae
+          laboriosam dicta eligendi quisquam consequatur unde perspiciatis nisi facilis sunt! Error, architecto in!
+        </span>
+      </div>
+    </main>
+    <!-- ; -->
+
+    <!-- background particles move-->
+    <div class="tsparticles"></div>
+    <!-- ; -->
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const exampleText = ["Hi, I am Luqman Hakim"];
+        const exampleTyping = new AutoTyping(".name", exampleText, {
+          typeSpeed: 50,
+          deleteSpeed: 50,
+          waitBeforeDelete: 2000,
+          waitBetweenWords: 200,
+        });
+        exampleTyping.start();
+      });
+    </script>
+
+    <div id="cursor"></div>
+    <div id="cursor-border"></div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.0.6/tsparticles.slim.bundle.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
