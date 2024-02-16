@@ -46,27 +46,6 @@ const options = {
 
 // tsParticles.load has two parameters, the first one is the id of the container, the second one is an object with the options
 tsParticles.load("tsparticles", options);
-// ;
-
-// nav link animate
-const links = document.querySelectorAll(".nav-link");
-
-if (links.length) {
-  links.forEach((link) => {
-    link.addEventListener("click", (e) => {
-      links.forEach((link) => {
-        link.classList.remove("active");
-        if (!link.classList.contains("active")) {
-          link.style.color = "#b2b3b4";
-        }
-      });
-      link.classList.add("active");
-      link.style.color = "#86c232";
-    });
-  });
-}
-
-// ;
 
 // Code for Typing Animation
 var AutoTyping = (function (e) {
@@ -179,8 +158,6 @@ var AutoTyping = (function (e) {
   },
 ]).default;
 
-// ;
-
 // Custom cursor
 const cursor = document.querySelector("#cursor");
 const cursorBorder = document.querySelector("#cursor-border");
@@ -222,28 +199,19 @@ document.querySelectorAll("[data-cursor]").forEach((item) => {
   });
 });
 
-// ;
-
-// hide icon when display on medium size
-var offCanvas = document.querySelector("div.offcanvas");
-var brandIcon = document.getElementById("brandIcon");
-
-function checkOffCanvas() {
-  var offCanvasContains = offCanvas.classList.contains("show");
-  if (offCanvasContains) {
-    brandIcon.style.visibility = "hidden";
-    brandIcon.style.opacity = "0";
-    brandIcon.style.transition = "opacity 0.1s ease-out";
-  } else {
-    brandIcon.style.visibility = "visible";
-    brandIcon.style.opacity = "1";
-    brandIcon.style.transition = "opacity 0.1s ease";
-  }
+// scrolL with onclick
+function scrollSmoothTo(elementId) {
+  var element = document.getElementById(elementId);
+  element.scrollIntoView({ block: "start", behavior: "smooth" });
 }
 
-// Menambahkan event listener untuk memantau perubahan pada offCanvas
-offCanvas.addEventListener("transitionend", function () {
-  // Panggil fungsi untuk memeriksa kembali setelah transisi selesai
-  checkOffCanvas();
+// navbar
+const navbar = document.querySelector(".navbar");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 25) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
 });
-// ;

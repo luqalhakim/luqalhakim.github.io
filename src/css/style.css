@@ -32,10 +32,9 @@ font-family: 'Poppins', sans-serif;
   text-decoration: none !important;
 }
 
-html {
-  height: 1000px;
-  overflow-x: hidden;
-}
+/* html {
+  height: 2000px;
+} */
 
 /* Custom cursor */
 #cursor {
@@ -66,11 +65,15 @@ html {
 }
 
 /* Navbar */
-
 nav {
   width: 100%;
-  backdrop-filter: blur(5px);
-  box-sizing: border-box;
+  transition: ease-out 0.3s;
+}
+
+nav.scrolled {
+  background-color: #222629f6;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  transition: ease-in 0.1s;
 }
 
 nav a.navbar-brand img {
@@ -87,12 +90,6 @@ nav ul.navbar-nav li.nav-item a {
 nav ul.navbar-nav li.nav-item a.nav-link:hover {
   color: var(--green-young) !important;
   transition: ease-in 0.18s;
-}
-
-button.navbar-toggler {
-  width: fit-content;
-  height: 44.1667px;
-  border-radius: 100%;
 }
 
 ul.navbar-nav {
@@ -162,6 +159,9 @@ div.hero .description {
 /* Hero */
 
 /* Scroll down animation */
+div.scroll {
+  margin-bottom: 100px !important;
+}
 
 .box span {
   width: 20px;
@@ -187,27 +187,21 @@ div.hero .description {
 main {
   min-width: 100%;
   height: 100vmin;
-  /* background-color: #292d30 !important; */
 }
 
-main section#about {
+main section.about {
   min-width: 100%;
   height: fit-content;
   padding: 8% 10rem;
   background-color: #131415;
 }
 
-main section#about div.image img {
+main section.about div.image img {
   width: 250px;
   background-color: #1b1d20;
   border-radius: 10px;
   box-shadow: 0 0.2rem 0.5rem rgba(104, 104, 104, 0.15);
-  filter: grayscale(100%);
-}
-
-main section#about div.image img:hover {
-  filter: grayscale(0%);
-  transition: ease-in 0.3s;
+  filter: drop-shadow(15px 15px 3px #333333);
 }
 
 main div.description {
@@ -216,20 +210,6 @@ main div.description {
 
 main div.description div.text-heading {
   font-size: 24px;
-}
-
-main div.description div.text-heading i::before {
-  animation: rotate 2s linear infinite;
-}
-
-main div.text-description a {
-  text-decoration: none;
-  color: var(--green-young);
-  font-weight: bold;
-}
-
-main div.text-description a:hover {
-  color: #6a9829;
 }
 
 main button.btn {
@@ -297,22 +277,13 @@ main div.linked i.fa-location-dot {
   }
 }
 
-@keyframes rotate {
-  from {
-    transform: rotateZ(0deg);
-  }
-  to {
-    transform: rotateZ(360deg);
-  }
-}
-
 /* Responsive */
 @media only screen and (max-width: 992px) {
-  main section#about {
+  main section.about {
     padding: 10% 8rem;
   }
 
-  main section#about div.image {
+  main section.about div.image {
     text-align: center;
     margin-bottom: 50px;
   }
@@ -324,42 +295,37 @@ main div.linked i.fa-location-dot {
 }
 
 @media only screen and (max-width: 768px) {
-  nav div.offcanvas-header .navbar-brand img {
-    display: inherit;
-    height: 32px;
-    align-self: center;
-  }
-
-  nav div.offcanvas-header .navbar-brand {
-    display: flex;
-    width: 100%;
-  }
-
-  nav div.offcanvas-header .navbar-brand .text-brand {
-    box-sizing: border-box;
-    margin-left: 5px;
-    color: #252525;
-    font-size: 12px;
+  .navbar-toggler:focus {
+    text-decoration: none;
+    outline: 0;
+    box-shadow: none;
   }
 
   nav .offcanvas {
     min-height: 100vh;
-    background-color: #f5f5f5;
-    width: 75% !important;
-    border-radius: 10px 0 0 10px;
+    width: 55% !important;
+    margin-top: 60px;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(30px);
+    border-top-left-radius: 10px;
+    padding-left: 5px;
+  }
+
+  nav .offcanvas-backdrop {
+    background-color: transparent;
   }
 
   nav ul.navbar-nav li.nav-item {
     font-size: 18px;
     font-weight: 5px;
     margin: 0 10px 10px 10px;
-    background-color: #f8f8f8;
     border-radius: 5px;
-    box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.15);
+    z-index: 2;
   }
 
   nav ul.navbar-nav li.nav-item a {
     color: #b2b3b4;
+    text-transform: uppercase;
   }
 
   nav li.nav-item i {
@@ -381,11 +347,11 @@ main div.linked i.fa-location-dot {
 
   nav div.menu {
     display: block !important;
-    color: #252525;
     opacity: 50%;
     margin-left: 10px;
     margin-bottom: 10px;
-    font-weight: bold;
+    color: #ececec;
+    text-transform: uppercase;
   }
 
   nav div.sosial-media {
@@ -398,7 +364,6 @@ main div.linked i.fa-location-dot {
   }
 
   nav div.sosial-media i {
-    display: flex !important;
     padding: 10px 10px !important;
   }
 
@@ -428,11 +393,11 @@ main div.linked i.fa-location-dot {
   }
 
   /* Main */
-  main section#about {
+  main section.about {
     padding: 15% 3.5rem;
   }
 
-  main section#about div.image {
+  main section.about div.image {
     text-align: center;
     margin-bottom: 50px;
   }
@@ -440,5 +405,11 @@ main div.linked i.fa-location-dot {
   main div.description {
     padding: 0;
     margin: 0 !important;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  nav .offcanvas {
+    width: 60% !important;
   }
 }

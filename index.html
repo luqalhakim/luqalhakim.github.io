@@ -24,57 +24,43 @@
   >
     <!-- Navbar header-->
     <header>
-      <nav class="z-2 position-fixed navbar navbar-expand-md shadow">
+      <nav class="z-2 position-fixed navbar navbar-expand-md">
         <div class="container-fluid">
           <a class="navbar-brand" href="https://www.instagram.com/luq.elha" target="_blank">
             <img src="assets/icon.png" alt="icon" id="brandIcon" />
           </a>
           <button
-            class="navbar-toggler"
+            class="navbar-toggler border-0"
             type="button"
-            data-bs-toggle="offcanvas"
             data-bs-target="#navbarText"
+            data-bs-toggle="offcanvas"
             aria-controls="offcanvasExample"
             aria-expanded="false"
             aria-label="Toggle navigation"
+            aria-label="Close"
           >
-            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-bars fa-xl"></i>
           </button>
-          <div class="offcanvas offcanvas-end" tabindex="1" id="navbarText">
-            <div class="offcanvas-header">
-              <a class="navbar-brand" href="https://www.instagram.com/luq.elha" target="_blank">
-                <img src="assets/icon.png" alt="icon" />
-                <div class="text-brand fw-bold">
-                  LUQALHAKIM <br />
-                  <span class="opacity-50">luq.elha@gmail.com</span>
-                </div>
-              </a>
-              <button
-                type="button"
-                class="btn-close text-reset"
-                data-bs-dismiss="offcanvas"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="menu" style="display: none">Menu</div>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarText">
+            <div class="menu mt-3" style="display: none">Menu</div>
             <ul class="navbar-nav d-flex justify-content-center fw-semibold">
               <li class="nav-item">
-                <a class="nav-link" href="#home"><i class="fa-solid fa-house"></i>Home</a>
+                <a class="nav-link" onclick="scrollSmoothTo('home')">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#about"><i class="fa-solid fa-user"></i>About</a>
+                <a class="nav-link" onclick="scrollSmoothTo('about')">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#portfolio"><i class="fa-solid fa-file"></i>Portfolio</a>
+                <a class="nav-link">Projects</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#blog"><i class="fa-solid fa-book"></i>Blog</a>
+                <a class="nav-link">Blog</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#contact"><i class="fa-regular fa-message"></i>Contact</a>
+                <a class="nav-link">Contact</a>
               </li>
               <hr style="display: none" />
-              <div class="menu" style="display: none">Sosials</div>
+              <div class="menu fw-normal" style="display: none">Sosials</div>
               <div class="sosial-media d-flex flex-row" id="navbarText">
                 <a href="https://www.instagram.com/luq.elha" target="_blank"
                   ><i class="fa-brands fa-instagram fa-xl"></i
@@ -103,8 +89,8 @@
         </div>
       </div>
       <!-- Scroll down button -->
-      <div class="position-absolute bottom-0 start-50 translate-middle-x mb-5">
-        <a href="#about">
+      <div class="scroll position-absolute bottom-0 start-50 translate-middle-x mb-5">
+        <a onclick="scrollSmoothTo('main')">
           <div class="box">
             <span></span>
             <span></span>
@@ -116,12 +102,17 @@
     </section>
     <!-- ; -->
 
+    <!-- scroll button  -->
+    <div id="cursor"></div>
+    <div id="cursor-border"></div>
+    <!-- ; -->
+
     <!-- main content -->
     <main class="z-1 position-relative container" id="main">
-      <section class="position-absolute start-50 translate-middle-x" id="about">
+      <section class="about position-absolute start-50 translate-middle-x" id="about">
         <div class="d-lg-flex justify-content-center">
           <div class="image text-center">
-            <img src="assets/luqman.png" alt="luqman" />
+            <img src="assets/luqman.png" alt="luqman" oncontextmenu="return false" />
           </div>
           <div class="ms-4 description">
             <div class="text-heading mb-3 fw-semibold">
@@ -130,9 +121,7 @@
             </div>
             <div class="text-description">
               Hello, my name is Muhammad Luqmanul Hakim, usually called Luqman, I am now an active student at the
-              <a href="https://informatika.uin-malang.ac.id/" target="_blank"
-                >Maulana Malik Ibrahim State Islamic University, Malang, Indonesia.</a
-              >
+              Maulana Malik Ibrahim State Islamic University, Malang, Indonesia.
               <div class="my-3">
                 I took the informatics engineering study program 'cause I wanted to learn about computer technology such
                 as website development, machine learning, artificial intelligence, cyber security, etc.
@@ -158,11 +147,6 @@
 
     <!-- background particles move-->
     <div class="tsparticles"></div>
-    <!-- ; -->
-
-    <!-- scroll button  -->
-    <div id="cursor"></div>
-    <div id="cursor-border"></div>
     <!-- ; -->
 
     <script>
