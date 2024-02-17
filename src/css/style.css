@@ -186,9 +186,10 @@ div.scroll {
 
 main {
   min-width: 100%;
-  height: 100vmin;
+  height: 123vmin;
 }
 
+/* About */
 main section.about {
   min-width: 100%;
   height: fit-content;
@@ -241,6 +242,44 @@ main div.linked i.fa-location-dot {
   padding-left: 2px;
 }
 
+.about-text {
+  margin-left: -20px !important;
+}
+
+.about-text:after {
+  content: "";
+  width: 150px;
+  height: 2px;
+  display: inline-block;
+  background: #dee2e6;
+  margin: 4px 10px;
+}
+
+.wave {
+  animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.5s; /* Change to speed up or slow down */
+  animation-iteration-count: infinite; /* Never stop waving :) */
+  transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
+
+.skills-text:after {
+  content: "";
+  width: 80px;
+  height: 2px;
+  display: inline-block;
+  background: #dee2e6;
+  margin: 4px 10px;
+}
+
+/* Contact */
+main section.contact {
+  min-width: 100%;
+  padding: 8% 10rem;
+  background-color: #131415;
+  border: 1px solid red;
+}
+
 /* Animation */
 
 @keyframes slide-up {
@@ -274,6 +313,33 @@ main div.linked i.fa-location-dot {
   }
   100% {
     opacity: 0;
+  }
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  } /* The following five values can be played with to make the waving more or less extreme */
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  } /* Reset for the last half to pause */
+  100% {
+    transform: rotate(0deg);
   }
 }
 
