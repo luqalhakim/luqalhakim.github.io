@@ -9,7 +9,7 @@ font-family: 'Poppins', sans-serif;
 /* Set padding of every section in main */
 
 :root {
-  --green-old: #2e4512;
+  --green-old: #496e18;
   --green-young: #86c232;
   --black: #222629;
   --gray: #474b4f;
@@ -58,10 +58,11 @@ font-family: 'Poppins', sans-serif;
   height: var(--size);
   border-radius: 50%;
   box-shadow: 0 0 0 1px var(--green-old);
+  /* background-color: #567926; */
   pointer-events: none;
   transition: top 0.15s ease-out, left 0.15s ease-out, width 0.15s ease-out, height 0.15s ease-out,
     background-color 0.15s ease-out;
-  z-index: 999;
+  z-index: 998;
 }
 
 /* Navbar */
@@ -193,7 +194,7 @@ main {
 main section.about {
   min-width: 100%;
   height: fit-content;
-  padding: 8% 10rem;
+  padding: 8% 8rem;
   background-color: #131415;
 }
 
@@ -265,11 +266,48 @@ main div.linked i.fa-location-dot {
 
 .skills-text:after {
   content: "";
-  width: 80px;
+  width: 150px;
   height: 2px;
   display: inline-block;
   background: #dee2e6;
   margin: 4px 10px;
+}
+
+.skills h2 {
+  margin-bottom: 5rem;
+}
+
+.skills-container {
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skills-container .skills-box {
+  background: var(--green-old);
+  padding: 1rem;
+  text-align: center;
+  transition: 0.5s ease;
+  width: 150px;
+  height: 130px;
+  border-radius: 3px;
+}
+
+.skills-container .skills-box:hover {
+  background: #6a9b25;
+  transform: scale(1.1);
+}
+
+.skills-box i {
+  font-size: 4rem;
+}
+
+.skills-box p {
+  font-size: 1rem;
+  margin-top: 5px;
+  font-weight: bold;
+  margin-bottom: 0;
 }
 
 /* Contact */
@@ -344,6 +382,12 @@ main section.contact {
 }
 
 /* Responsive */
+@media only screen and (max-width: 1200px) {
+  .skills-container {
+    justify-content: left;
+  }
+}
+
 @media only screen and (max-width: 992px) {
   main section.about {
     padding: 10% 8rem;
@@ -477,5 +521,18 @@ main section.contact {
 @media only screen and (max-width: 576px) {
   nav .offcanvas {
     width: 60% !important;
+  }
+
+  .skills-container {
+    justify-content: center;
+  }
+
+  .skills-container .skills-box {
+    width: 120px;
+    height: 100px;
+  }
+
+  .skills-box i {
+    font-size: 3rem;
   }
 }
