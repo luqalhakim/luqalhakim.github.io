@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="src/css/style.css" />
+    <link rel="stylesheet" href="src/css/starsBackground.css" />
   </head>
   <body
     onselectstart="return false"
@@ -22,6 +23,7 @@
     onCut="return false"
     onDrag="return false"
     onDrop="return false"
+    class="position-relative"
   >
     <!-- Navbar header-->
     <header>
@@ -103,19 +105,16 @@
     </section>
     <!-- ; -->
 
-    <!-- scroll button  -->
-    <div id="cursor"></div>
-    <div id="cursor-border"></div>
-    <!-- ; -->
-
     <!-- main content -->
     <main class="z-1 position-relative container" id="main">
       <!-- about -->
-      <section class="about position-absolute start-50 translate-middle-x" id="about">
-        <div class="d-lg-flex justify-content-center mb">
+      <section class="about position-absolute top-0 start-50 translate-middle-x" id="about">
+        <div class="d-lg-flex justify-content-center">
           <div class="flex-column image text-center mb-5">
             <div class="about-text fw-bold mb-2">ABOUT</div>
-            <img src="assets/luqman.png" alt="luqman" oncontextmenu="return false" />
+            <div class="img-gradient">
+              <img src="assets/luqman.png" alt="luqman" oncontextmenu="return false" />
+            </div>
           </div>
           <div class="ms-4 description align-self-center">
             <div class="text-heading mb-3 fw-semibold">
@@ -136,7 +135,7 @@
               </div>
               <div><i class="fa-solid fa-location-dot fa-lg"></i>Surabaya, Indonesia</div>
             </div>
-            <a href="#">
+            <a onclick="scrollSmoothTo('contact')">
               <button class="btn btn-sm px-3 py-2 fw-semibold">HIRE ME</button>
             </a>
             <a href="#">
@@ -176,18 +175,65 @@
       </section>
 
       <!-- contact -->
-      <section
-        class="contact position-absolute bottom-0 start-50 translate-middle-x"
-        id="contact"
-        style="display: none"
-      >
-        <div class="d-lg-flex justify-content-center"></div>
+      <section class="contact position-absolute start-50 translate-middle-x" id="contact">
+        <div class="d-md-flex flex-column rounded-2 container-contact justify-content-center">
+          <div class="row">
+            <div class="col-md-5 column">
+              <h2 class="fw-bold display-6 mt-4">
+                Let's talk about everything with me <span style="color: #86c232">Goo on form!</span>
+              </h2>
+              <img src="assets/artComputer.gif" alt="artstation" class="art" oncontextmenu="return false" />
+            </div>
+            <div class="col-md-7 column">
+              <div class="contact-form bg-white p-5 rounded-5 text-secondary">
+                <div class="d-flex flex-column">
+                  <span class="fw-bold">Full Name</span>
+                  <input
+                    class="mt-1 mb-4 p-2 rounded-2 bg-transparent text-dark input-area"
+                    type="text"
+                    placeholder=""
+                  />
+                </div>
+                <div class="d-flex flex-column">
+                  <span class="fw-bold">Email <span style="color: salmon">*</span></span>
+                  <input class="mt-1 mb-4 p-2 rounded-2 bg-transparent text-dark input-area" type="text" required />
+                </div>
+                <div class="d-flex flex-column">
+                  <span class="fw-bold">Message <span style="color: salmon">*</span></span>
+                  <textarea class="mt-1 p-2 rounded-2 bg-transparent text-dark input-area" rows="4" required></textarea>
+                </div>
+                <div class="mt-4">
+                  <a>
+                    <button class="btn btn-send fw-bold">Send Message</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
     <!-- ; -->
 
+    <!-- Footer -->
+    <footer class="z-1 footer-section position-relative">
+      <div class="copyright-area position-absolute start-50 translate-middle-x w-100">
+        <div class="container">
+          <div class="copyright-text text-center">
+            <p>
+              Copyright &copy; 2024, All Right Reserved
+              <a href="https://www.instagram.com/luq.elha" target="_blank">Luqman Hakim</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- ; -->
+
     <!-- background particles move-->
-    <div class="tsparticles"></div>
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
     <!-- ; -->
 
     <script>

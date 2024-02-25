@@ -1,0 +1,6 @@
+Have to do ???
+- Contact Form belum di inisialisasi datanya dan belum di uji coba
+
+* Next project
+- Blog pages
+- Project section

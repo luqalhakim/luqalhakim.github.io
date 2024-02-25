@@ -1,13 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&family=Oswald&family=Poppins&display=swap");
-
 /* To use font 
 font-family: 'Noto Sans', sans-serif;
 font-family: 'Oswald', sans-serif;
 font-family: 'Poppins', sans-serif;
 */
-
 /* Set padding of every section in main */
-
 :root {
   --green-old: #496e18;
   --green-young: #86c232;
@@ -25,44 +22,14 @@ font-family: 'Poppins', sans-serif;
 
 * {
   font-family: "Poppins", sans-serif;
-  cursor: none;
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box; /* Firefox, other Gecko */
   box-sizing: border-box; /* Opera/IE 8+ */
   text-decoration: none !important;
 }
 
-/* html {
-  height: 2000px;
-} */
-
-/* Custom cursor */
-#cursor {
-  position: fixed;
-  top: -5px;
-  left: -5px;
-  width: 10px;
-  height: 10px;
-  background-color: var(--green-young);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 999;
-}
-
-#cursor-border {
-  --size: 20px;
-  position: fixed;
-  top: calc(var(--size) / -2);
-  left: calc(var(--size) / -2);
-  width: var(--size);
-  height: var(--size);
-  border-radius: 50%;
-  box-shadow: 0 0 0 1px var(--green-old);
-  /* background-color: #567926; */
-  pointer-events: none;
-  transition: top 0.15s ease-out, left 0.15s ease-out, width 0.15s ease-out, height 0.15s ease-out,
-    background-color 0.15s ease-out;
-  z-index: 998;
+body {
+  background: linear-gradient(to bottom, #011224 0%, #000000 100%) !important;
 }
 
 /* Navbar */
@@ -91,6 +58,7 @@ nav ul.navbar-nav li.nav-item a {
 nav ul.navbar-nav li.nav-item a.nav-link:hover {
   color: var(--green-young) !important;
   transition: ease-in 0.18s;
+  cursor: pointer;
 }
 
 ul.navbar-nav {
@@ -187,13 +155,11 @@ div.scroll {
 
 main {
   min-width: 100%;
-  height: 123vmin;
 }
 
 /* About */
 main section.about {
   min-width: 100%;
-  height: fit-content;
   padding: 8% 8rem;
   background-color: #131415;
 }
@@ -202,8 +168,35 @@ main section.about div.image img {
   width: 250px;
   background-color: #1b1d20;
   border-radius: 10px;
-  box-shadow: 0 0.2rem 0.5rem rgba(104, 104, 104, 0.15);
-  filter: drop-shadow(15px 15px 3px #333333);
+  filter: drop-shadow(10px 10px 10px #454545);
+}
+
+/* Gradient */
+.img-gradient {
+  position: relative;
+  display: inline-block;
+}
+
+.img-gradient:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  display: inline-block;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%, rgba(23, 23, 23, 0)),
+    color-stop(100%, rgba(0, 0, 0, 0.973))
+  ); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.678) 0%);
+}
+.img-gradient img {
+  display: block;
 }
 
 main div.description {
@@ -214,14 +207,19 @@ main div.description div.text-heading {
   font-size: 24px;
 }
 
-main button.btn {
+main button.btn-sm {
   background-color: var(--green-young);
   border-radius: 1px !important;
   color: #131415;
 }
 
-main button.btn:hover {
+main div.description a button.btn-sm:hover {
   opacity: 80%;
+  background-color: var(--green-young);
+  color: #131415;
+}
+
+main div.description a .btn:active {
   background-color: var(--green-young);
   color: #131415;
 }
@@ -285,10 +283,10 @@ main div.linked i.fa-location-dot {
 }
 
 .skills-container .skills-box {
-  background: var(--green-old);
+  background: var(--green-young);
   padding: 1rem;
   text-align: center;
-  transition: 0.5s ease;
+  transition: 0.3s ease;
   width: 150px;
   height: 130px;
   border-radius: 3px;
@@ -311,11 +309,77 @@ main div.linked i.fa-location-dot {
 }
 
 /* Contact */
+.woot-dance {
+  bottom: 0;
+  animation: dance linear 10s infinite alternate;
+}
+
 main section.contact {
   min-width: 100%;
-  padding: 8% 10rem;
+  padding: 8% 8rem;
   background-color: #131415;
-  border: 1px solid red;
+  top: calc(-2px + var(--about-section-height));
+}
+
+main div.contact-form {
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+main div.column {
+  padding: 0;
+}
+
+.contact-form .input-area {
+  border: 0.1px solid black;
+}
+
+.contact-form .input-area:focus {
+  outline: 2px solid var(--green-young);
+  border: 0;
+}
+
+main button.btn-send {
+  background-color: var(--green-young);
+  height: 2.5rem;
+  width: 100%;
+  color: #ffffff;
+}
+
+main button.btn-send:hover {
+  color: #ffffff;
+  background-color: #6a9b25;
+}
+
+main .contact a button.btn-send:active {
+  color: #ffffff;
+  background-color: #6a9b25;
+}
+
+main .contact img.art {
+  width: 300px;
+}
+
+/* Footer */
+footer .copyright-area {
+  top: calc(-3px + var(--about-section-height) + var(--contact-section-height));
+  background: #202020;
+  padding: 25px 0;
+}
+
+footer .copyright-text p {
+  margin: 0;
+  font-size: 14px;
+  color: #878787;
+}
+
+footer .copyright-text p a {
+  color: var(--green-young);
+}
+
+footer .copyright-text p a:hover {
+  color: #6a9b25;
+  transition: ease-in 0.1s;
 }
 
 /* Animation */
@@ -391,6 +455,7 @@ main section.contact {
 @media only screen and (max-width: 992px) {
   main section.about {
     padding: 10% 8rem;
+    width: 100% !important;
   }
 
   main section.about div.image {
@@ -401,6 +466,10 @@ main section.contact {
   main div.description {
     padding: 0;
     margin: 0 !important;
+  }
+
+  main section.contact {
+    padding: 10% 8rem;
   }
 }
 
@@ -417,7 +486,6 @@ main section.contact {
     margin-top: 60px;
     background-color: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(30px);
-    border-top-left-radius: 10px;
     padding-left: 5px;
   }
 
@@ -505,6 +573,7 @@ main section.contact {
   /* Main */
   main section.about {
     padding: 15% 3.5rem;
+    width: 100% !important;
   }
 
   main section.about div.image {
@@ -515,6 +584,21 @@ main section.contact {
   main div.description {
     padding: 0;
     margin: 0 !important;
+  }
+
+  main section.contact {
+    padding: 15% 3.5rem;
+    justify-content: center;
+    width: var(--about-section-width);
+  }
+
+  main .contact .col-md-5.column {
+    margin-bottom: 25px;
+  }
+
+  main .contact img.art {
+    display: block;
+    margin: 0 auto;
   }
 }
 

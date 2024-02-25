@@ -1,52 +1,3 @@
-// tsParticles background
-const options = {
-  background: {
-    color: "#222629", // the canvas background color
-  },
-  interactivity: {
-    events: {
-      onClick: {
-        // this handles the mouse click event
-        enable: true,
-        mode: "push", // this adds particles
-      },
-      onHover: {
-        // this handles the mouse hover event
-        enable: true,
-        mode: "repulse", // this make particles move away from the mouse
-      },
-    },
-    modes: {
-      push: {
-        quantity: 0, // number of particles to add
-      },
-      repulse: {
-        distance: 100, // the distance of the particles from the mouse
-      },
-    },
-  },
-  particles: {
-    links: {
-      enable: true, // this enables links between particles
-      opacity: 0.3,
-      distance: 100,
-    },
-    move: {
-      enable: true, // this makes particles move
-      speed: { min: 1, max: 3 }, // this is the speed of the particles
-    },
-    opacity: {
-      value: { min: 0.3, max: 0.7 }, // this sets the opacity of the particles
-    },
-    size: {
-      value: { min: 1, max: 3 }, // this sets the size of the particles
-    },
-  },
-};
-
-// tsParticles.load has two parameters, the first one is the id of the container, the second one is an object with the options
-tsParticles.load("tsparticles", options);
-
 // Code for Typing Animation
 var AutoTyping = (function (e) {
   var t = {};
@@ -158,47 +109,6 @@ var AutoTyping = (function (e) {
   },
 ]).default;
 
-// Custom cursor
-const cursor = document.querySelector("#cursor");
-const cursorBorder = document.querySelector("#cursor-border");
-const cursorPos = { x: 0, y: 0 };
-const cursorBorderPos = { x: 0, y: 0 };
-
-document.addEventListener("mousemove", (e) => {
-  cursorPos.x = e.clientX;
-  cursorPos.y = e.clientY;
-
-  cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-});
-
-requestAnimationFrame(function loop() {
-  const easting = 8;
-  cursorBorderPos.x += (cursorPos.x - cursorBorderPos.x) / easting;
-  cursorBorderPos.y += (cursorPos.y - cursorBorderPos.y) / easting;
-
-  cursorBorder.style.transform = `translate(${cursorBorderPos.x}px, ${cursorBorderPos.y}px)`;
-  requestAnimationFrame(loop);
-});
-
-document.querySelectorAll("[data-cursor]").forEach((item) => {
-  item.addEventListener("mouseover", (e) => {
-    if (item.dataset.cursor === "pointer") {
-      cursorBorder.style.backgroundColor = "rgba(255, 255, 255, .6)";
-      cursorBorder.style.setProperty("--size", "30px");
-    }
-    if (item.dataset.cursor === "pointer2") {
-      cursorBorder.style.backgroundColor = "white";
-      cursorBorder.style.mixBlendMode = "difference";
-      cursorBorder.style.setProperty("--size", "80px");
-    }
-  });
-  item.addEventListener("mouseout", (e) => {
-    cursorBorder.style.backgroundColor = "unset";
-    cursorBorder.style.mixBlendMode = "unset";
-    cursorBorder.style.setProperty("--size", "50px");
-  });
-});
-
 // scrolL with onclick
 function scrollSmoothTo(elementId) {
   var element = document.getElementById(elementId);
@@ -215,3 +125,49 @@ window.addEventListener("scroll", () => {
     navbar.classList.remove("scrolled");
   }
 });
+
+// height of about section
+function updateAboutSectionHeight() {
+  const aboutSectionHeight = document.querySelector("main .about").offsetHeight;
+  document.documentElement.style.setProperty("--about-section-height", `${aboutSectionHeight}px`);
+}
+
+updateAboutSectionHeight();
+
+window.addEventListener("resize", updateAboutSectionHeight);
+
+// height of contact section
+function updateContactSectionHeight() {
+  const contactSectionHeight = document.querySelector("main .contact").offsetHeight;
+  document.documentElement.style.setProperty("--contact-section-height", `${contactSectionHeight}px`);
+}
+
+updateContactSectionHeight();
+
+window.addEventListener("resize", updateContactSectionHeight);
+
+// width of about section
+function updateAboutSectionWidth() {
+  const aboutSectionWidth = document.querySelector("main .about").offsetWidth;
+  document.documentElement.style.setProperty("--about-section-width", `${aboutSectionWidth}px`);
+}
+
+updateAboutSectionWidth();
+
+window.addEventListener("resize", updateAboutSectionWidth);
+
+// Get random color for particles background
+function generateRandomColor() {
+  var r = Math.floor(Math.random() * 256); // 0 to 255
+  var g = Math.floor(Math.random() * 256); // 0 to 255
+  var b = Math.floor(Math.random() * 256); // 0 to 255
+  return "#" + r.toString(16).padStart(2, "0") + g.toString(16).padStart(2, "0") + b.toString(16).padStart(2, "0");
+}
+
+function updateRandomColor() {
+  var randomColor = generateRandomColor();
+  document.documentElement.style.setProperty("--random-color", randomColor);
+}
+
+// Update the random color every 1 second (1000 milliseconds)
+setInterval(updateRandomColor, 1000);
