@@ -29,7 +29,7 @@ font-family: 'Poppins', sans-serif;
 }
 
 body {
-  background: linear-gradient(to bottom, #011224 0%, #000000 100%) !important;
+  background: linear-gradient(to bottom, #01101f 0%, #000000 100%) !important;
 }
 
 /* Navbar */
@@ -504,6 +504,7 @@ footer .copyright-text p a:hover {
   nav ul.navbar-nav li.nav-item a {
     color: #b2b3b4;
     text-transform: uppercase;
+    font-size: 12px;
   }
 
   nav li.nav-item i {
@@ -530,6 +531,7 @@ footer .copyright-text p a:hover {
     margin-bottom: 10px;
     color: #ececec;
     text-transform: uppercase;
+    font-size: 14px;
   }
 
   nav div.sosial-media {
