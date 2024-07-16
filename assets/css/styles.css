@@ -202,9 +202,9 @@ svg {
   }
 
   .nav_list {
-  display: flex;
-  flex-direction: column;
-  row-gap: 3rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
   }
 }
 
@@ -278,7 +278,9 @@ svg {
 .home_education {
   font-size: 1rem;
   white-space: nowrap;
-  overflow: hidden;   
+  overflow: hidden;
+  position: relative;
+  height: 1.2em;
 }
 
 .home_subtitle span,
@@ -606,21 +608,6 @@ svg {
   margin-top: 2rem;
 }
 
-/* Scroll Bar */
-/* ::-webkit-scrollbar {
-  width: .6rem;
-  border-radius: .5rem;
-  background-color: hsl(228, 12%, 25%);
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: hsl(228, 8%, 35%);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: hsl(228, 8%, 45%);
-} */
-
 ::-webkit-scrollbar {
   display: none;
 }
@@ -660,10 +647,6 @@ svg {
   .contact_container {
     grid-template-columns: 360px;
     justify-content: center;
-  }
-
-  .home_title br {
-    display: none;
   }
 }
 
@@ -736,7 +719,7 @@ svg {
 
   .blur-header::after {
     backdrop-filter: blur(25px);
-    --webkit-backdrop-filter: bluer(25px); /*For safari */
+    --webkit-backdrop-filter: blur(25px); /*For safari */
   }
 }
 
@@ -869,29 +852,5 @@ svg {
 
   .scrolllup {
     right: 3rem;
-  }
-}
-
-/* Animation */
-.anim-typewriter {
-  animation: typewriter 2.5s steps(44) 1s infinite normal both,
-             blinkTextCursor 500ms steps(44) infinite normal;
-}
-
-@keyframes typewriter {
-  from {
-    width: 0;
-  } 
-  to {
-    width: 21.5em;
-  }
-}
-
-@keyframes blinkTextCursor {
-  from {
-    border-right-color: rgba(255,255,255,.75);
-  } 
-  to {
-    border-right-color: transparent;
   }
 }

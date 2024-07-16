@@ -65,6 +65,33 @@ const sendEmail = (e) => {
 
 contactForm.addEventListener('submit', sendEmail)
 
+// Typing Animation 
+document.addEventListener('DOMContentLoaded', () => {
+    const textElement = document.querySelector('.home_education');
+    const text = "Student | Front-end Developer | Data Entry";
+    const typingSpeed = 50; // Speed of typing effect in milliseconds
+    const delayAfterTyping = 1000; // Delay after typing completes
+    let index = 0;
+
+    // Function to control the typing effect
+    function typeWriter() {
+        if (index < text.length) {
+            textElement.textContent += text.charAt(index);
+            index++;
+            setTimeout(typeWriter, typingSpeed); // Speed of typing effect
+        } else {
+            // After typing is complete
+            setTimeout(() => {
+                textElement.textContent = ''; // Clear text
+                index = 0;
+                typeWriter(); // Restart the typing effect
+            }, delayAfterTyping); // Delay before restarting
+        }
+    }
+
+    typeWriter();
+});
+
 // Show Scroll Up
 const scrollUp = () => {
     const scrollUp = document.getElementById('scroll-up')
